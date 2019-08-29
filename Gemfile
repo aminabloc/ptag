@@ -10,6 +10,9 @@ ruby "2.6.3"
 
 gem "autoprefixer-rails"
 
+# text messages
+gem 'twilio-ruby', '~> 5.25.4'
+
 gem "honeybadger"
 gem "pg" , "~> 1.1.3"
 gem "puma"
@@ -23,7 +26,9 @@ gem "title"
 gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin, :jruby]
 gem "uglifier"
 gem "bootsnap", require: false
-
+gem "devise"
+gem 'rqrcode'
+gem 'ansi-to-html'
 
 group :development do
   gem "listen"

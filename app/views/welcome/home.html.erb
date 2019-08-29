@@ -1,4 +1,16 @@
-<h1>Welcome to Connections </h1>
+<div style="margin: 10% 25%">
+<p class="cyan-text" id="notice"><%= notice %></p>
+  <div style="position:fixed; background-color: white; top: 0; left: 0; height: 100%; width: 50%; padding: 10%">
+    <img style=" width: 70%" src="/Pivottag.png">
+
+    <%= form_for @checkin do |f| %> 
+      <%= f.label "Enter Your Cell Phone Number" %> 
+      <%= f.text_field :phone , value: "+1", placeholder: "Enter your phone number"%> 
+    <% end %>
+  </div>
+</div>
+
+
 
 <div class="overlay"></div>
 
@@ -10,12 +22,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
-    opacity: .6;
+    background-color: white;
+    opacity: .7;
+    z-index: -1 ;
 }
 
-html {
-    background: url("/connectionsbg.JPG") no-repeat center center fixed; 
+input {
+  color: cyan;
+  font-size: 1em;
+}
+
+body {
+  background: url("https://images.pexels.com/photos/1243361/pexels-photo-1243361.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

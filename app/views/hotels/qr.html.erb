@@ -1,0 +1,21 @@
+<div style="padding: 5% 10%">
+<p id="notice"><%= notice %></p>
+
+<p>
+ 
+  <h2>
+  <%= @hotel.name %>
+  </h2>
+  
+  <h6>
+  <%= root_url + "/" + @hotel.subdomain %> 
+  </h6>
+  
+  <img style ="height: 25%; width: 25%"src="<%= @png.to_data_url %>" />
+</p>
+
+
+
+<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
+<%= link_to 'Back', hotels_path %>
+</div>
