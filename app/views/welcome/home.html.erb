@@ -7,7 +7,7 @@
   </div>
   <div class="s12 m6" style="position:fixed; background-color: white;left: 50%; height 100%; padding: 10% 10%; width: 50%">
 
-    <h2 style="font-family: Questrial"> Welcome<% if current_user.name != nil %> <%= "," current_user.name.split.first%>! <% end %></h2>
+    <h2 style="font-family: Questrial"> Welcome! </h2>
     <%= form_for @video do |f| %> 
       <%= f.text_field :comment, placeholder: "What text would you like to add with your video?" %>
       <%= f.file_field :attachment %> 
