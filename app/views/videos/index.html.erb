@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Upload</th>
+      <th>Quality</th>
+      <th>Shareable</th>
+      
+      <th>Comment</th>
+      <th>Thumbnail</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><video src="<%= video.attachment %>" style="width: 20%" controls></video></td>
+        <td><%= video.quality %></td>
+        <td><%= video.shareable %></td>
+        
+        <td><%= video.comment %></td>
+        <td><%= video.thumbnail %></td>
+        <td><%= User.find(video.user_id).name %></td>
+        <td><%= link_to 'Show', video %></td>
+        <td><%= link_to 'Edit', edit_video_path(video) %></td>
+        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Video', new_video_path %>
+
+<script>
+  $(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>

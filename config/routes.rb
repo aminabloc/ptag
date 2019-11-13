@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :hotels
-  resources :checkins
+  
+  resources :videos
   get 'welcome/home'
   get 'welcome/index'
   
-  get '/checkin/:subdomain', to: 'hotels#qr'
-  
+
   root to: "welcome#home"
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
 end

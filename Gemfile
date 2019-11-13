@@ -30,6 +30,18 @@ gem "devise"
 gem 'rqrcode'
 gem 'ansi-to-html'
 
+gem 'figaro'
+
+#uploads
+gem 'carrierwave'
+
+gem 'best_in_place', '~> 3.0.1'
+
+
+#omniauth
+gem 'omniauth-facebook'
+gem 'omniauth-instagram'
+
 group :development do
   gem "listen"
   gem "rack-mini-profiler", require: false

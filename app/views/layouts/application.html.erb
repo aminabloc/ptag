@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ptag</title>
+    <title>GOTV Videos</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -26,5 +26,15 @@
 
   <body>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
+
+
+<script>
+  $(document).ready(function() {
+  /* Activating Best In Place */
+  jQuery(".best_in_place").best_in_place();
+});
+</script>

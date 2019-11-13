@@ -1,0 +1,54 @@
+
+<%= form_with(model: video, local: true) do |form| %>
+  <% if video.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(video.errors.count, "error") %> prohibited this video from being saved:</h2>
+
+      <ul>
+      <% video.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :quality %>
+    <%= form.select :quality , ["True","False"]%>
+  </div>
+
+  <div class="field">
+    <%= form.label :shareable %>
+    <%= form.select :shareable , ["True","False"]%>
+  </div>
+
+  <div class="field">
+    <%= form.label :attachment %>
+    <%= form.text_field :attachment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_field :comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbnail %>
+    <%= form.text_field :thumbnail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Video", class: "btn btn-large red white-text"%>
+  </div>
+<% end %>
+
+<style>
+  select {
+    display: block;
+  }
+</style>
