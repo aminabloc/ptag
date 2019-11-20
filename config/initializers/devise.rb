@@ -263,6 +263,9 @@ Devise.setup do |config|
   config.omniauth :facebook, ENV['APP_ID'], ENV['APP_SECRET'] , 
 {:scope => 'email,user_age_range, user_events, user_friends, user_gender, user_hometown, user_location, user_likes,user_videos, user_posts'}
 
+  config.omniauth :instagram, ENV["IG_ID"],ENV["IG_SECRET"] , 
+  {:info_fields => 'name,email' }
+  
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :campaigns
   resources :videos
   get 'welcome/home'
   get 'welcome/index'

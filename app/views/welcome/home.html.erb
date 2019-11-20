@@ -9,7 +9,9 @@
 
     <h2 style="font-family: Questrial"> Welcome! </h2>
     <%= form_for @video do |f| %> 
-      <%= f.text_field :comment, placeholder: "What text would you like to add with your video?" %>
+      <%= f.text_field :phone , placeholder: "Mobile Number to received your reviewed video" %> 
+      <%= f.collection_select :campaign_id , Campaign.all, :id, :name %> 
+      <%= f.text_area :comment, placeholder: "What text would you like to add with your video?" %>
       <%= f.file_field :attachment %> 
       <%= f.hidden_field :quality , value: false %>
       <%= f.hidden_field :shareable , value: false %>
@@ -45,5 +47,9 @@
     left:0;
     opacity: .7;
     background-color: black;
+  }
+  
+  select{
+    display: block;
   }
 </style>
