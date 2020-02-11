@@ -42,6 +42,10 @@ gem 'best_in_place', '~> 3.0.1'
 gem 'omniauth-facebook'
 gem 'omniauth-instagram'
 
+#browser
+gem 'browser', '2.0.3'
+
+
 group :development do
   gem "listen"
   gem "rack-mini-profiler", require: false

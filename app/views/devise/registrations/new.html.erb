@@ -1,11 +1,12 @@
 <div class="row">
+  <% if params[:hide_bg] %> 
   <div class="col s12 m6">
     <div class="video_form">
         <img id="bg_img" src="https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1439,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1492119811/articles/2016/02/12/you-re-damn-right-electability-matters-to-black-voters/160211-goff-electability-tease_n7mdtd">
         <div id="overlay"> </div>
     </div>
   </div>
-  <div class="s12 m6" style="position:fixed; background-color: white;left: 50%; height 100%; padding: 20% 10%; width: 50%">
+  <div class="s12 m6" style="background-color: white;height 100%; padding: 20% 10%;">
    <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>

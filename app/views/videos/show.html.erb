@@ -10,7 +10,7 @@
 <% if @video.quality == true and @video.shareable == true %> 
 <p>
   <strong>Share Code:</strong>
-  <%= link_to "https://theblackwave.org/" + User.find(@video.user_id).name.downcase.gsub(" ", "_") %>
+  <%= link_to video_url(id: @video.id) %>
 </p>
 <% else%> 
 <p class="red-text">
@@ -27,23 +27,7 @@
   <%= @video.comment %>
 </p>
 
-<p>
-  <strong>Thumbnail:</strong>
-  <%= @video.thumbnail %>
-</p>
-<p>
-  <strong>Quality:</strong>
-  <%= @video.quality %>
-</p>
 
-<p>
-  <strong>Shareable:</strong>
-  <%= @video.shareable %>
-</p>
-<p>
-  <strong>User:</strong>
-  <%= User.find(@video.user_id).name %>
-</p>
 
 
 <%= link_to 'Edit', edit_video_path(@video) %> |

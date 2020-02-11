@@ -1,18 +1,17 @@
 <div class="row">
-  <div class="col s12 m6">
-    <div class="video_form">
-        <img id="bg_img" src="https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1439,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1492119811/articles/2016/02/12/you-re-damn-right-electability-matters-to-black-voters/160211-goff-electability-tease_n7mdtd">
-        <div id="overlay"> </div>
-    </div>
-  </div>
-  <div class="s12 m6" style="position:fixed; background-color: white;left: 50%; height 100%; padding: 10% 10%; width: 50%">
 
-    <h2 style="font-family: Questrial"> Welcome! </h2>
+  <div class="s12 m6" style="background-color: white;height 100%; padding: 10% 10%;">
+
+    <h2 style="font-family: Questrial; text-align: center"> Why do you care? </h2>
     <%= form_for @video do |f| %> 
-      <%= f.text_field :phone , placeholder: "Mobile Number to received your reviewed video" %> 
-      <%= f.collection_select :campaign_id , Campaign.all, :id, :name %> 
-      <%= f.text_area :comment, placeholder: "What text would you like to add with your video?" %>
-      <%= f.file_field :attachment %> 
+      <%= f.text_field :phone , placeholder: "Mobile Number to received your reviewed video", required: true %> 
+      <% if params[:campaign]%> 
+         <%= f.hidden_field :campaign_id, value: Campaign.find_by_name(params[:campaign]).id %>
+        <% else %>
+          <%= f.collection_select :campaign_id , Campaign.all, :id, :name %> 
+        <% end %> 
+      <%= f.text_area :comment, placeholder: "What text would you like to add with your video?", required: true  %>
+      <%= f.file_field :attachment, required: true  %> 
       <%= f.hidden_field :quality , value: false %>
       <%= f.hidden_field :shareable , value: false %>
       <%= f.submit "Submit your video for review" , class: "btn large red white-text" , style:"margin: 10%; border-radius: 20px" %> 
