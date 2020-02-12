@@ -25,6 +25,10 @@ Rails.application.configure do
   config.public_file_server.headers = {
     "Cache-Control" => "public, max-age=31557600",
   }
+  ## allow usage as iframe
+  config.action_dispatch.default_headers = {
+      'X-Frame-Options' => 'ALLOWALL'
+  }
   #config.action_mailer.default_url_options = { host: ENV.fetch("APPLICATION_HOST") }
   #config.action_mailer.asset_host = ENV.fetch("ASSET_HOST", ENV.fetch("APPLICATION_HOST"))
 end
